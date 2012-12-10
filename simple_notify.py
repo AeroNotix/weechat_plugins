@@ -24,7 +24,7 @@ def catchpriv(data, signal, signal_data):
 
     if m['channel'] != currentbuffer() and USERNAME in m['arguments']:
         subprocess.call(
-            ["mpg123","/home/aero/.notice.mp3"],
+            ["mpg123","/home/aero/.weechat/python/autoload/notice.mp3"],
             stderr=open("/dev/null", "w"),
             stdin=open("/dev/null", "w")
             )
@@ -33,4 +33,3 @@ def catchpriv(data, signal, signal_data):
     return weechat.WEECHAT_RC_OK
 
 weechat.hook_signal("*,irc_in_PRIVMSG", "catchpriv", "")
-
